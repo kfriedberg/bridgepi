@@ -22,7 +22,7 @@ There's no security on this image, not even a firewall.  You should only use thi
 (replace path/to/foo with the path to that foo on your build system)
 
 1. Get buildroot http://buildroot.uclibc.org/
-2. Get bridgepi source (tar.gz from releases, or git clone)
+2. Get bridgepi source (tar.gz from releases, or `git clone https://github.com/kfriedberg/bridgepi.git`)
 3. `$ cd path/to/buildroot`
 4. 
  * For Raspberry Pi: `$ support/kconfig/merge_config.sh -m configs/raspberrypi_defconfig path/to/bridgepi/configs/bridgepi_defconfig_fragment`
