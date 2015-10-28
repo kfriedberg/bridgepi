@@ -1,0 +1,7 @@
+# For each entry, change 
+# -the serial value (ATTRS{serial}, get by plugging in then dmesg)
+# -the arbitrary internal name (all three occurences of BRIDGEDEV)
+# -the port number (TCP-LISTEN:4571)
+# -remove the # to uncomment the entry
+
+# SUBSYSTEM=="tty", ATTRS{serial}=="64131383331351411041", SYMLINK+="tty_BRIDGEDEV" RUN+="/sbin/start-stop-daemon -S --exec socat --background --pidfile /var/run/tty_BRIDGEDEV.pid --make-pidfile -- -d -d -ly TCP-LISTEN:4571,forever,fork /dev/tty_BRIDGEDEV,b9600,raw,echo=0"

@@ -1,0 +1,7 @@
+# partition table of bridgepi.img
+unit: sectors
+
+bridgepi.img1 : start=       63, size=   144522, Id= c, bootable
+bridgepi.img2 : start=   144585, size=  3743145, Id=83
+bridgepi.img3 : start=        0, size=        0, Id= 0
+bridgepi.img4 : start=        0, size=        0, Id= 0

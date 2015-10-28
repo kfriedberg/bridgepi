@@ -1,0 +1,37 @@
+#!/bin/sh
+
+while :
+do
+    clear
+    echo "1) Change bridge rules"
+    echo "2) Change network settings"
+    echo "3) Change SSH password"
+    echo "4) dmesg (show last few device status messages)"
+    echo "5) Backup config"
+    echo "6) Logoff (close ssh connection)"
+    echo "7) Reboot (and close ssh connection)"
+    echo "8) Poweroff (and close ssh connection)"
+    echo "9) Drop to shell"
+    echo
+    
+    read -p "Choose an option: " choice
+    case $choice in
+        1) nano /etc/udev/rules.d/90-bridgepi.rules;;
+        2) nano /etc/network/interfaces;;
+        3) passwd;;
+        4) dmesg;read -p "Press Enter to return to menu";;
+        5)
+            clear
+            echo "Use an SFTP program (such as Filezilla in SFTP mode)"
+            echo "to backup and restore config files. File locations:"
+            echo "Bridge rules: /etc/udev/rules.d/90-bridgepi.rules"
+            echo "Network settings: /etc/network/interfaces"
+            echo "Encrypted password: /etc/shadow"
+            echo
+            read -p "Press Enter to return to the menu";;
+        6) exit;;
+        7) echo Rebooting;reboot;break;;
+        8) echo Powering off;poweroff;break;;
+        9) break;;
+    esac
+done
