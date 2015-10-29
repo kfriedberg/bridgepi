@@ -15,11 +15,15 @@ if [ "$(id -u)" -ne "$ROOTUID" ] ; then
     exit 1
 fi
 
-truncate -s 0 bridgepi.img
-truncate -s 1904M bridgepi.img
-sfdisk bridgepi.img < partitiontable
+if [ ! -d build ] ; then
+    mkdir build
+fi
+
+truncate -s 0 build/bridgepi.img
+truncate -s 1904M build/bridgepi.img
+sfdisk build/bridgepi.img < partitiontable
 LOOPDEV=`losetup -f`
-losetup -P $LOOPDEV bridgepi.img
+losetup -P $LOOPDEV build/bridgepi.img
 mkfs.fat -F 32 ${LOOPDEV}p1
 mkfs.ext4 ${LOOPDEV}p2
 mkdir card1

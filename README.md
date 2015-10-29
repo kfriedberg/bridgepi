@@ -32,4 +32,4 @@ There's no security on this image, not even a firewall.  You should only use thi
 7. `$ cd path/to/bridgepi`
 8. `$ sudo mkimage.sh path/to/buildroot`
 
-Image is created in path/to/bridgepi/bridgepi.img
+Image is created in path/to/bridgepi/build/bridgepi.img
