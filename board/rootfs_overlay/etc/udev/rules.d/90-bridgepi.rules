@@ -4,4 +4,4 @@
 # -the port number (TCP-LISTEN:4571)
 # -remove the # to uncomment the entry
 
-# SUBSYSTEM=="tty", ATTRS{serial}=="64131383331351411041", SYMLINK+="tty_BRIDGEDEV" RUN+="/sbin/start-stop-daemon -S --exec socat --background --pidfile /var/run/tty_BRIDGEDEV.pid --make-pidfile -- -d -d -ly TCP-LISTEN:4571,forever,fork /dev/tty_BRIDGEDEV,b9600,raw,echo=0"
+# SUBSYSTEM=="tty", ATTRS{serial}=="64131383331351411041", SYMLINK+="tty_BRIDGEDEV" RUN+="/sbin/start-stop-daemon -S --exec socat --background --pidfile /var/run/tty_BRIDGEDEV.pid --make-pidfile -- -d -d -ly TCP-LISTEN:4571,forever,fork /dev/tty_BRIDGEDEV,b9600,echo=0"
